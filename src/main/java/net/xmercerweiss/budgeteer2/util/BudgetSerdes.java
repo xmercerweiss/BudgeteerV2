@@ -1,4 +1,6 @@
-package net.xmercerweiss.budgeteer2.data;
+package net.xmercerweiss.budgeteer2.util;
+
+import net.xmercerweiss.budgeteer2.data.Budget;
 
 /**
  * A Serializer/Deserializer for budget ({@code .bdgt}) files

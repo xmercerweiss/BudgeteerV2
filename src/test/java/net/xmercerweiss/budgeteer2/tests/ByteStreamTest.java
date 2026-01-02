@@ -9,7 +9,7 @@ import net.xmercerweiss.budgeteer2.data.ByteStream;
 /**
  * Unit tests of the {@link net.xmercerweiss.budgeteer2.data.ByteStream} class
  * @author Xavier Mercerweiss
- * @version v2.0 2025-12-31
+ * @version v2.0 2026-01-01
  */
 public class ByteStreamTest
 {
@@ -65,14 +65,24 @@ public class ByteStreamTest
     ByteStream bytes = new ByteStream();
     for (int i = 0; i < 10; i++)
       bytes.appendInt(i);
-    System.out.println(bytes);
     for (int expected = 0; expected < 10; expected++)
     {
       int actual = bytes.readInt();
       assertEquals(expected, actual);
     }
-    System.out.println(bytes);
-    System.out.println();
+  }
+
+  @Test
+  void Append_WithLong_ReadsEqual()
+  {
+    ByteStream bytes = new ByteStream();
+    for (long l = 0; l < 10; l++)
+      bytes.appendLong(l);
+    for (long expected = 0; expected < 10; expected++)
+    {
+      long actual = bytes.readLong();
+      assertEquals(expected, actual);
+    }
   }
 
   @Test
